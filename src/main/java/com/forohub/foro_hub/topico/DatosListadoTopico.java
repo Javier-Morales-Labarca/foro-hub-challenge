@@ -8,8 +8,9 @@ public record DatosListadoTopico(
         String titulo,
         String mensaje,
         LocalDateTime fechaCreacion
-) {
-    public DatosListadoTopico(Topico topico) {
-        this(topico.getId(), topico.getTitulo(), topico.getMensaje(), topico.getFechaCreacion());
-    }
+    )
+{
+
+
+
 }

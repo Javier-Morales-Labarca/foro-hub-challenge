@@ -1,0 +1,19 @@
+
+# Archivos de configuración local y sensible
+application-local.properties
+
+# Directorios de compilación y empaquetado
+target/
+build/
+!mvnw
+!mvnw.cmd
+
+# Directorios de IDEs (IntelliJ, Eclipse, etc.)
+.idea/
+.classpath
+.project
+.settings/
+*.iml
+
+# Archivos generados automáticamente
+*.log

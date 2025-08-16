@@ -9,5 +9,5 @@ import org.springframework.data.domain.Pageable;
 // ...
 public interface TopicoRepository extends JpaRepository<Topico, Long> {
     // Sobrescribimos el método findAll para que solo traiga los activos
-    Page<Topico> findAllByActivoTrue(Pageable paginacion);
+    Page<Topico> findByActivoTrue(Pageable paginacion);
 }
