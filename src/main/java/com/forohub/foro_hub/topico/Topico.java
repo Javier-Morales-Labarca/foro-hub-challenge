@@ -1,7 +1,6 @@
 package com.forohub.foro_hub.topico;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +11,6 @@ import java.time.LocalDateTime;
 @Entity(name = "Topico")
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Topico {
 
@@ -22,14 +20,23 @@ public class Topico {
 
     private String titulo;
     private String mensaje;
-    private LocalDateTime fechaCreacion = LocalDateTime.now();
-
+    private LocalDateTime fechaCreacion;
     @Enumerated(EnumType.STRING)
-    private StatusTopico status = StatusTopico.NO_RESPONDIDO;
-
+    private StatusTopico status;
     private String autor;
     private String curso;
-    private Boolean activo = true;
+    private Boolean activo;
+
+    // Constructor para la creación de nuevos tópicos
+    public Topico(DatosRegistroTopico datosRegistro) {
+        this.activo = true;
+        this.titulo = datosRegistro.titulo();
+        this.mensaje = datosRegistro.mensaje();
+        this.autor = datosRegistro.autor();
+        this.curso = datosRegistro.curso();
+        this.fechaCreacion = LocalDateTime.now();
+        this.status = StatusTopico.NO_RESPONDIDO;
+    }
 
     // Método de actualización
     public void actualizarDatos(DatosActualizarTopico datos) {
