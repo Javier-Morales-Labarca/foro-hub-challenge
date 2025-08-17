@@ -45,8 +45,8 @@ public class Usuario implements UserDetails { // <-- CAMBIO CLAVE: IMPLEMENTA US
         return this.login; // Spring Security usará este método para obtener el nombre de usuario.
     }
 
-    // Los siguientes métodos los dejamos en 'true' para este challenge.
-    // Sirven para manejar cuentas expiradas, bloqueadas, etc.
+
+
     @Override
     public boolean isAccountNonExpired() {
         return true;

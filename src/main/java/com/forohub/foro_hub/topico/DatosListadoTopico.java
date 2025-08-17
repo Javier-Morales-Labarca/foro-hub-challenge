@@ -8,7 +8,7 @@ public record DatosListadoTopico(
         String mensaje,
         LocalDateTime fechaCreacion
 ) {
-    // Constructor adicional para facilitar la conversión
+    // Constructor adicional
     public DatosListadoTopico(Topico topico) {
         this(topico.getId(), topico.getTitulo(), topico.getMensaje(), topico.getFechaCreacion());
     }
