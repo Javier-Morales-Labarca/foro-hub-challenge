@@ -23,7 +23,7 @@ public class TopicoController {
     @Transactional
     public ResponseEntity<DatosListadoTopico> registrarTopico(@RequestBody @Valid DatosRegistroTopico datosRegistro, UriComponentsBuilder uriComponentsBuilder) {
         // En tu clase Topico, el constructor debe coincidir con los campos del DTO
-        Topico topico = new Topico(datosRegistro.titulo(), datosRegistro.mensaje(), datosRegistro.autor(), datosRegistro.curso());
+        Topico topico = new Topico(null, datosRegistro.titulo(), datosRegistro.mensaje(), null, null, datosRegistro.autor(), datosRegistro.curso(), true);
         topicoRepository.save(topico);
 
         // Retorna un código 201 Created y la URI del nuevo recurso.
@@ -50,7 +50,7 @@ public class TopicoController {
         return ResponseEntity.ok(datosTopico);
     }
 
-    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     @PutMapping
     @Transactional
